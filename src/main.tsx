@@ -9,6 +9,8 @@ import { router } from "./routes";
 import { persistor, store } from "./store/store";
 
 import "./index.css";
+import { ThemeProvider } from "@mui/material";
+import { theme } from "./utils/theme";
 
 const queryClient = new QueryClient();
 
@@ -17,7 +19,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
+          <ThemeProvider theme={theme}>
+            <RouterProvider router={router} />
+          </ThemeProvider>
         </QueryClientProvider>
       </PersistGate>
     </Provider>

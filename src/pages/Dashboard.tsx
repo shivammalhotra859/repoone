@@ -2,7 +2,10 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { icons } from "../assets/images";
 import Layout from "../components/Layout";
-import { Avatar, IconButton } from "@mui/material";
+import { Avatar, Button, IconButton } from "@mui/material";
+import TabNav from "../components/TabNav";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import DashboardTable from "../components/DashboardTable";
 
 const Dashboard = () => {
   return (
@@ -60,6 +63,35 @@ const Dashboard = () => {
             </div>
           </div>
           {/* end of content */}
+          <div className="px-10 pt-[27px]">
+            <TabNav
+              items={[
+                {
+                  label: (
+                    <div className="flex items-center pb-2">
+                      <p>My Cases</p>
+                      <div className="bg-[#EEEEEE] rounded-sm text-[1D1D1F] text-[11px] font-medium flex items-center justify-center p-1 ml-1">
+                        17
+                      </div>
+                    </div>
+                  ),
+                  value: 0,
+                },
+              ]}
+              value={0}
+              handleChange={() => {}}
+            />
+            <div className="pt-[14px]">
+              <Button
+                variant="outlined"
+                className="rounded !border-[#DADCE0] !text-black !text-sm !normal-case !px-[7px] !h-8"
+              >
+                <FilterAltIcon className="!text-2xl" />
+                <p>Filter</p>
+              </Button>
+              <DashboardTable />
+            </div>
+          </div>
         </div>
       </div>
     </Layout>
