@@ -72,7 +72,7 @@ const DashboardTable = () => {
       case "Underwriting":
         return "bg-[#DBE7FF] text-[#0C368A]";
       case "RCU":
-        return "bg-[#FFDCE5] text-[#BA1E45]";
+        return "bg-[#FFDCE5] text-error";
       case "Post Sanction":
         return "bg-[#EDE3FE] text-[#6B1CB0]";
       default:
@@ -155,7 +155,7 @@ const DashboardTable = () => {
                 className={rowIdx !== rows?.length - 1 ? "border-b" : ""}
               >
                 <TableCell className="!border-b-0 !border-r !border-r-[#D8D8D8] border-dashed !font-[14px]">
-                  <div className="text-[#325EFF]">{row?.caseNo}</div>
+                  <div className="text-primary">{row?.caseNo}</div>
                   <div>Created: {row.createdOn}</div>
                 </TableCell>
                 <TableCell className="!border-b-0 !border-r !border-r-[#D8D8D8] border-dashed !font-[14px]">

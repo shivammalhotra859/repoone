@@ -54,11 +54,11 @@ const Dashboard = () => {
                 Hi Amol 👋,{" "}
               </p>
               <p className="text-2xl font-semibold !leading-[34px]">
-                There are <span className="text-[#325EFF]">99</span> active
-                cases to be processed
+                There are <span className="text-primary">99</span> active cases
+                to be processed
               </p>
               <p className="text-2xl font-semibold !leading-[34px]">
-                totalling <span className="text-[#325EFF]">₹ 420 crores</span>.
+                totalling <span className="text-primary">₹ 420 crores</span>.
               </p>
             </div>
           </div>

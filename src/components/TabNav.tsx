@@ -14,7 +14,7 @@ const TabNav = (props: ITabNav) => {
         value={props.value}
         onChange={props.handleChange}
         classes={{
-          indicator: "!bg-[#325EFF] !h-1",
+          indicator: "!bg-primary !h-1",
         }}
       >
         {props.items?.map((item) => (
