@@ -4,7 +4,6 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Button, FormControl, InputLabel, Select } from '@mui/material';
-import { PrimaryButton, TertiaryButton } from './buttons';
 
 // const options = [
 //     'None',
@@ -62,8 +61,8 @@ export default function LongMenu() {
                     'aria-labelledby': 'long-button',
                     className: 'px-5 py-6'
                 }}
-                // anchorEl={anchorEl}
-                open={true}
+                anchorEl={anchorEl}
+                open={open}
                 onClose={handleClose}
                 PaperProps={{
                     style: {
@@ -73,7 +72,7 @@ export default function LongMenu() {
                 }}
             >
                 <FormControl
-                    className='mt-3 bg-blue-500'
+                    className=''
                     size='small'
                     fullWidth
                 >
