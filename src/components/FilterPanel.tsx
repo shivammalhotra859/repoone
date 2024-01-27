@@ -5,13 +5,10 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Button, FormControl, InputLabel, Select } from '@mui/material';
 import DateRangeInput from './DateRangeInput';
-
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
 const ITEM_HEIGHT = 60;
 
-export default function LongMenu() {
-
-
-
+const FilterPanel = () => {
     const [creationDate, setCreationDate] = React.useState([null, null]);
     const [updationDate, setUpdationDate] = React.useState([null, null]);
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -48,8 +45,9 @@ export default function LongMenu() {
 
     return (
         <div>
-
-            <IconButton
+            <Button
+                variant="outlined"
+                className="rounded !border-[#DADCE0] !text-black !text-sm !normal-case !px-[7px] !h-8"
                 aria-label="more"
                 id="long-button"
                 aria-controls={open ? 'long-menu' : undefined}
@@ -57,8 +55,9 @@ export default function LongMenu() {
                 aria-haspopup="true"
                 onClick={handleClick}
             >
-                <MoreVertIcon />
-            </IconButton>
+                <FilterAltIcon className="!text-2xl" />
+                <p>Filter</p>
+            </Button>
             <Menu
                 id="long-menu"
                 MenuListProps={{
@@ -118,12 +117,14 @@ export default function LongMenu() {
                 <div className='mt-5'>
 
                     <Button
+                        onClick={handleClose}
                         variant="outlined"
                         className="mr-2 rounded-full border-[#00000033] hover:border-[#00000033] w-[77px] text-black text-sm normal-case px-[7px] h-8"
                     >
                         <p>Cancel</p>
                     </Button>
                     <Button
+                        onClick={handleClose}
                         variant="outlined"
                         className="mr-2 rounded-full border-[#00000033] hover:border-[#00000033] hover:bg-[#000000]  bg-[#000000] w-[77px] text-white text-sm normal-case px-[7px] h-8"
                     >
@@ -135,3 +136,4 @@ export default function LongMenu() {
         </div>
     );
 }
+export default FilterPanel

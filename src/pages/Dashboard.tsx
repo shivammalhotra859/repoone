@@ -6,6 +6,7 @@ import { Avatar, Button, IconButton } from "@mui/material";
 import TabNav from "../components/TabNav";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import DashboardTable from "../components/DashboardTable";
+import FilterPanel from "../components/FilterPanel";
 
 const Dashboard = () => {
   return (
@@ -79,16 +80,12 @@ const Dashboard = () => {
                 },
               ]}
               value={0}
-              handleChange={() => {}}
+              handleChange={() => { }}
             />
             <div className="pt-[14px]">
-              <Button
-                variant="outlined"
-                className="rounded !border-[#DADCE0] !text-black !text-sm !normal-case !px-[7px] !h-8"
-              >
-                <FilterAltIcon className="!text-2xl" />
-                <p>Filter</p>
-              </Button>
+              {/* filter poper */}
+              <FilterPanel />
+              {/* Dashboard Table */}
               <DashboardTable />
             </div>
           </div>
