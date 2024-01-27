@@ -1,14 +1,24 @@
 import { TextField } from '@mui/material';
-import { forwardRef } from 'react'
+import { Ref, forwardRef } from 'react'
 import DatePicker from "react-datepicker";
 import { FC } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-export interface DateRangeInputProps { }
-const DateRangeInput: FC<DateRangeInputProps> = ({ label, handleDateChange, dateRange }) => {
+interface DateRangeInputProps {
+    label: string;
+    handleDateChange: () => void;
+    dateRange: {}[];
+}
+interface CustomInputProps {
+    value?: string;
+    onClick?: () => void;
+    label: string;
 
+}
+
+const DateRangeInput: FC<DateRangeInputProps> = (props) => {
+    const { label, handleDateChange, dateRange } = props;
     const [startDate, endDate] = dateRange;
-
-    const CustomInput = forwardRef(({ value, onClick, label }, ref) => (
+    const CustomInput: FC<CustomInputProps> = forwardRef(({ value, onClick, label }, ref: Ref<HTMLInputElement>) => (
 
         <TextField
             autoComplete='off'

@@ -69,7 +69,7 @@ const rows = [
 
 const DashboardTable = () => {
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
   const assignModalOpen = () => {
     setOpen(true);
   };
