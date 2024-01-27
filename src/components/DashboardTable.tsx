@@ -8,6 +8,9 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
+import DialogComponent from "./DialogComponent";
+import AssignTable from "./AssignTable";
+import { useState } from "react";
 
 const rows = [
   {
@@ -65,6 +68,15 @@ const rows = [
 ];
 
 const DashboardTable = () => {
+
+  const [open, setOpen] = useState(false);
+  const assignModalOpen = () => {
+    setOpen(true);
+  };
+
+  const assignModalClose = () => {
+    setOpen(false);
+  };
   const getStageColor = (val: string) => {
     switch (val) {
       case "Applicant Details":
@@ -82,6 +94,12 @@ const DashboardTable = () => {
 
   return (
     <div>
+      <DialogComponent
+        handleClose={assignModalClose}
+        open={open}
+      >
+        <AssignTable />
+      </DialogComponent>
       <div className="mt-8 rounded-lg border border-[#DADCE0]">
         <Table>
           <TableHead>
@@ -177,7 +195,7 @@ const DashboardTable = () => {
                   {row.loanAmount}
                 </TableCell>
                 <TableCell className="!border-b-0 !border-r !border-r-[#D8D8D8] border-dashed !font-[14px] !p-0">
-                  <Button className="!flex !items-center !rounded-none !justify-between !px-3 !py-6 !normal-case !text-black !font-normal !h-full !w-full">
+                  <Button onClick={assignModalOpen} className="!flex !items-center !rounded-none !justify-between !px-3 !py-6 !normal-case !text-black !font-normal !h-full !w-full">
                     {row.assignedTo}
                     <ExpandMore fontSize="small" />
                   </Button>
