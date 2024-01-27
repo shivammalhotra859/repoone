@@ -19,7 +19,7 @@ const TabNav = (props: ITabNav) => {
       >
         {props.items?.map((item) => (
           <Tab
-            className="!p-0 !text-[15px] !text-[#1A1A1A] !normal-case !font-semibold !justify-end"
+            className="!p-0 !text-[15px] mr-2 !text-[#1A1A1A] !normal-case !font-semibold !justify-end"
             label={item?.label}
             value={item?.value}
           />

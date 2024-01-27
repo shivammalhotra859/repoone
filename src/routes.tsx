@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard";
 import FilterPanel from "./components/FilterPanel";
 import AssignTable from "./components/AssignTable";
 import DateRangeInput from "./components/DateRangeInput";
+import ApplicationDetails from "./pages/ApplicationDetails";
 
 export const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/assign",
-    element: <DateRangeInput />,
+    element: <ApplicationDetails />,
     children: [],
   },
 ]);
